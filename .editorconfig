@@ -38,3 +38,12 @@ dotnet_diagnostic.SA1124.severity = none
 
 # SA1413: 複数行の初期化（配列やオブジェクト）の末尾コンマ「,」を強制するルールを無視
 dotnet_diagnostic.SA1413.severity = none
+
+# SA1623: プロパティの概要ドキュメントはアクセサと一致している必要がありますというルールを無視（アクセサと一致していなくても許可）
+dotnet_diagnostic.SA1623.severity = none
+
+# SA1629: XMLヘッダーのドキュメントの一部が、ピリオドで終わることを強制するルールを無視（ピリオドなしでも許可）
+dotnet_diagnostic.SA1629.severity = none
+
+# SA1642: コンストラクタの概要ドキュメントは、標準的な文章から始めるべきですというルールを無視（標準的な文章でなくても許可）
+dotnet_diagnostic.SA1642.severity = none
