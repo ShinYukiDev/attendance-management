@@ -1,0 +1,51 @@
+﻿name: バグ報告
+description: 不具合を報告するためのテンプレート
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: issue
+    attributes:
+      label: 発生している事象
+      description: 何が起きているかを簡潔に記載してください。
+      placeholder: 例) 保存ボタンを押すとエラーが表示される
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: 再現できる最短手順を記載してください。
+      placeholder: |
+        1. ○○画面を開く
+        2. △△を入力する
+        3. 保存ボタンを押す
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する結果
+      placeholder: 例) 正常に保存が完了する
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の結果
+      placeholder: 例) "500 Internal Server Error" が表示される
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 利用環境
+      description: わかる範囲で記載してください（OS / ブラウザ / バージョン など）。
+      placeholder: 例) Windows 11 / Chrome 126
+    validations:
+      required: false
