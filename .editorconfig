@@ -1,0 +1,40 @@
+﻿# 最上位の設定ファイルであることを宣言
+root = true
+
+[*.cs]
+# ==========================================
+# .NET 標準コードスタイル（インデント・改行）
+# ==========================================
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+charset = utf-8
+
+# ==========================================
+# StyleCop 警告個別の無効化設定 (none = 無視)
+# ==========================================
+
+# SA1633: ファイルの先頭に必ず著作権ヘッダーコメントを書けというルールを無視
+dotnet_diagnostic.SA1633.severity = none
+
+# SA1200: using句を「namespaceの中」に書けという強制を無視（通常通り外側を許可）
+dotnet_diagnostic.SA1200.severity = none
+
+# SA1101: クラス内のメソッドや変数に必ず "this." をつけろという強制を無視（省略を許可）
+dotnet_diagnostic.SA1101.severity = none
+
+# SA1503: if文などの波括弧 { } を1行だけの処理でも省略するなという強制を無視
+dotnet_diagnostic.SA1503.severity = none
+
+# SA1201 / SA1202: クラス内の並び順（publicが先、privateが後等）の厳密な強制を無視
+dotnet_diagnostic.SA1201.severity = none
+dotnet_diagnostic.SA1202.severity = none
+
+# SA1005: コメント文（//）の直後に半角スペースを強制するルールを無視
+dotnet_diagnostic.SA1005.severity = none
+
+# SA1124: #region 〜 #endregion の使用を禁止するルールを無視（コード整理を許可）
+dotnet_diagnostic.SA1124.severity = none
+
+# SA1413: 複数行の初期化（配列やオブジェクト）の末尾コンマ「,」を強制するルールを無視
+dotnet_diagnostic.SA1413.severity = none

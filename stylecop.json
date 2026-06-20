@@ -1,0 +1,20 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/Configuration/stylecop.schema.json",
+  "settings": {
+    "documentationRules": {
+      "companyName": "AB-Project",
+      "copyrightText": "Copyright (c) AB-Project. All rights reserved.",
+      "documentInterfaces": false,
+      "documentInternalElements": false,
+      "documentExposedElements": false,
+      "documentPrivateElements": false,
+      "documentPrivateFields": false
+    },
+    "namingRules": {
+      "allowPrivateWithUnderscore": true
+    },
+    "layoutRules": {
+      "newlineAtEndOfFile": "require"
+    }
+  }
+}
