@@ -12,7 +12,7 @@ set TARGET_FRAMEWORK=net8.0
 
 echo ==================================================
 echo  .NET 8 WinForms 複数ソリューション構成プロジェクト作成を開始します
-echo  (Oracle.ManagedDataAccess.Core 追加版)
+echo  (Serilog設定外出し対応 ＆ Oracle対応 ＆ xUnit全面配置版)
 echo ==================================================
 
 rem 1. フォルダの作成 (src, tests, db)
@@ -64,27 +64,33 @@ dotnet add tests\ABCommon.DataAccess.Tests\ABCommon.DataAccess.Tests.csproj refe
 
 
 rem ==================================================
-rem 5. 外部パッケージの追加 (Serilog ＆ Oracle)
+rem 5. 外部パッケージの追加 (Serilog ＆ Oracle ＆ Json設定)
 rem ==================================================
 echo 📦 外部パッケージを追加しています...
 
-rem 各WinForm（UI層）にはSerilogコア＋ファイル・コンソール出力先（Sink）を追加
+rem 各WinForm（UI層）にはSerilogコア＋出力先＋★JSON構成読込パッケージを追加
 dotnet add src\AB001.WinForm\AB001.WinForm.csproj package Serilog
 dotnet add src\AB001.WinForm\AB001.WinForm.csproj package Serilog.Sinks.Console
 dotnet add src\AB001.WinForm\AB001.WinForm.csproj package Serilog.Sinks.File
+dotnet add src\AB001.WinForm\AB001.WinForm.csproj package Microsoft.Extensions.Configuration.Json
+dotnet add src\AB001.WinForm\AB001.WinForm.csproj package Serilog.Settings.Configuration
 
 dotnet add src\AB002.WinForm\AB002.WinForm.csproj package Serilog
 dotnet add src\AB002.WinForm\AB002.WinForm.csproj package Serilog.Sinks.Console
 dotnet add src\AB002.WinForm\AB002.WinForm.csproj package Serilog.Sinks.File
+dotnet add src\AB002.WinForm\AB002.WinForm.csproj package Microsoft.Extensions.Configuration.Json
+dotnet add src\AB002.WinForm\AB002.WinForm.csproj package Serilog.Settings.Configuration
 
 dotnet add src\AB003.WinForm\AB003.WinForm.csproj package Serilog
 dotnet add src\AB003.WinForm\AB003.WinForm.csproj package Serilog.Sinks.Console
 dotnet add src\AB003.WinForm\AB003.WinForm.csproj package Serilog.Sinks.File
+dotnet add src\AB003.WinForm\AB003.WinForm.csproj package Microsoft.Extensions.Configuration.Json
+dotnet add src\AB003.WinForm\AB003.WinForm.csproj package Serilog.Settings.Configuration
 
 rem 共通ビジネスロジック層にはSerilogコアのみ追加
 dotnet add src\ABCommon.Business\ABCommon.Business.csproj package Serilog
 
-rem ★共通データアクセス層にSerilogコアとOracle接続パッケージを追加
+rem 共通データアクセス層にSerilogコアとOracle接続パッケージを追加
 dotnet add src\ABCommon.DataAccess\ABCommon.DataAccess.csproj package Serilog
 dotnet add src\ABCommon.DataAccess\ABCommon.DataAccess.csproj package Oracle.ManagedDataAccess.Core
 
@@ -118,6 +124,7 @@ dotnet sln AB003.sln add src\ABCommon.DataAccess\ABCommon.DataAccess.csproj
 dotnet sln AB003.sln add tests\ABCommon.Business.Tests\ABCommon.Business.Tests.csproj
 dotnet sln AB003.sln add tests\ABCommon.DataAccess.Tests\ABCommon.DataAccess.Tests.csproj
 
+
 rem ==================================================
 rem 7. ビルド確認
 rem ==================================================
@@ -127,6 +134,6 @@ dotnet build AB002.sln
 dotnet build AB003.sln
 
 echo ==================================================
-echo  🎉 Oracle対応の環境構築が完了しました！
+echo  🎉 すべての設定が完了しました！
 echo ==================================================
 pause
