@@ -1,0 +1,46 @@
+﻿name: タスク
+description: 実施すべき作業を整理するためのテンプレート
+title: "[Task] "
+labels:
+  - task
+body:
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 目的
+      description: このタスクを行う目的を一言で記載してください。
+      placeholder: 例) リリース前に依存ライブラリを更新する
+    validations:
+      required: true
+
+  - type: textarea
+    id: todo
+    attributes:
+      label: やること
+      description: 作業項目をチェックリストで記載してください。
+      placeholder: |
+        - [ ] 影響調査
+        - [ ] 実装
+        - [ ] 動作確認
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件
+      description: Given / When / Then で完了条件を記載してください（複数可・任意）。
+      placeholder: |
+        シナリオ1
+        Given: 変更内容が develop ブランチに対してPR作成済み
+        When: CI を実行する
+        Then: すべてのチェックが成功し、レビュー承認が1件以上ある
+
+        シナリオ2
+        Given: 手順書の更新が必要である
+        When: レビュー前チェックを行う
+        Then: 手順書が最新化され、差分に反映されている
+
+        ※必要な数だけ「シナリオN」を追加して記載
+    validations:
+      required: false

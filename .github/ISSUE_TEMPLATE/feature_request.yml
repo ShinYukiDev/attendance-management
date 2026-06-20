@@ -1,0 +1,54 @@
+﻿name: 機能追加
+description: 新機能や改善案を提案するためのテンプレート
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 概要
+      description: 追加・改善したい内容を一言で記載してください。
+      placeholder: 例) ユーザー一覧にCSVエクスポート機能を追加したい
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 背景・目的
+      description: なぜ必要かを簡潔に記載してください。
+      placeholder: 例) 手作業での集計に時間がかかっているため
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 提案内容
+      description: 実装イメージを箇条書きで記載してください。
+      placeholder: |
+        - 一覧画面に「CSV出力」ボタンを追加
+        - 現在のフィルタ条件を適用して出力
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件
+      description: Given / When / Then で完了条件を記載してください（複数可・任意）。
+      placeholder: |
+        シナリオ1
+        Given: 管理者ユーザーがユーザー一覧画面を開いている
+        When: 「CSV出力」ボタンをクリックする
+        Then: 現在のフィルタ条件に一致するユーザー一覧のCSVがダウンロードされる
+
+        シナリオ2
+        Given: フィルタ条件が未指定である
+        When: 「CSV出力」ボタンをクリックする
+        Then: 全ユーザーを含むCSVがダウンロードされる
+
+        ※必要な数だけ「シナリオN」を追加して記載
+    validations:
+      required: false
