@@ -38,9 +38,13 @@
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
-[Gates determined based on constitution file]
+- [ ] レイヤ責務分離: WinForm/Business/DataAccess の責務混在がない
+- [ ] 仕様トレーサビリティ: 要件・ユーザーストーリーと実装項目の対応が明記されている
+- [ ] テスト先行: 失敗テストを先に定義し、完了条件に `dotnet test` 成功を含む
+- [ ] 可観測性: 主要処理のログ設計（開始/終了/失敗、相関識別子）が定義されている
+- [ ] ドキュメント方針: 設計文書は日本語で記述し、必要箇所に mermaid 図を含める
 
 ## Project Structure
 
@@ -57,6 +61,7 @@ specs/[###-feature]/
 ```
 
 ### Source Code (repository root)
+
 <!--
   ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
   for this feature. Delete unused options and expand the chosen structure with
@@ -103,11 +108,17 @@ ios/ or android/
 **Structure Decision**: [Document the selected structure and reference the real
 directories captured above]
 
+## Documentation & Visualization
+
+- 本計画で作成・更新する説明文書は日本語で記述する。
+- アーキテクチャ、処理順序、責務分担の説明には mermaid 図を含める。
+- 文章のみでは誤読リスクがある箇所は、図示を必須とする。
+
 ## Complexity Tracking
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+| Violation                  | Why Needed         | Simpler Alternative Rejected Because |
+| -------------------------- | ------------------ | ------------------------------------ |
+| [e.g., 4th project]        | [current need]     | [why 3 projects insufficient]        |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient]  |
