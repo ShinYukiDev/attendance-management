@@ -14,6 +14,22 @@
       },
       "registered_skills": [],
       "installed_at": "2026-06-21T11:41:23.975058+00:00"
+    },
+    "branch-convention": {
+      "version": "1.0.0",
+      "source": "local",
+      "manifest_hash": "sha256:7efe1bfce264c25a4eddce6d65aa74ebc63a532b82e2d82264155e82c39d3859",
+      "enabled": true,
+      "priority": 10,
+      "registered_commands": {
+        "copilot": [
+          "speckit.branch-convention.configure",
+          "speckit.branch-convention.validate",
+          "speckit.branch-convention.rename"
+        ]
+      },
+      "registered_skills": [],
+      "installed_at": "2026-06-21T12:22:55.604748+00:00"
     }
   }
 }
