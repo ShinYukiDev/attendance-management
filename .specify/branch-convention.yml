@@ -1,0 +1,17 @@
+﻿convention:
+  branch_pattern: "{type}/issue-{ticket}-{kebab}"
+  folder_pattern: "issue-{ticket}-{kebab}"
+  type_prefix:
+    feature: "feature"
+    bugfix: "bugfix"
+    hotfix: "hotfix"
+    refactor: "refactor"
+    docs: "docs"
+  default_type: "feature"
+  seq_padding: 3
+  seq_start: 1
+  date_format: "YYYYMMDD"
+  ticket_pattern: "[0-9]+"
+  max_length: 60
+  separator: "-"
+  lowercase: true
